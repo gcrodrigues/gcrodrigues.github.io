@@ -1,0 +1,34 @@
+.container {
+  height: 100vh;
+  min-height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container h2 {
+  margin-bottom: 10px;
+}
+
+.container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  margin-top: 15px;
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  text-decoration: none;
+
+  background-color: #7159c1;
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.container a:hover {
+  transform: translateY(1.5px);
+}
