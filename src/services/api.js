@@ -3,7 +3,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: "https://api.github.com/graphql",
   headers: {
-    Authorization: `bearer ${process.env.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN}`,
+    Authorization: "bearer b015824201eaffcb7060ff53a6ca2c744f9340b4",
   },
 });
 
