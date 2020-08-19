@@ -1,28 +1,15 @@
 import styled from "styled-components";
-import { darken } from "polished";
+import { darken, lighten } from "polished";
 
 export const Content = styled.div`
   height: 100%;
   width: 100%;
+  position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-`;
-
-export const ContactText = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 421px;
-  width: 100%;
-  max-width: 400px;
-  min-width: 300px;
-  padding: 20px 30px;
-
-  h2 {
-    font-size: 1.8rem;
-  }
 `;
 
 export const Form = styled.form`
@@ -31,43 +18,37 @@ export const Form = styled.form`
   align-items: stretch;
 
   width: 40%;
-  min-width: 300px;
+  min-width: 322px;
   max-width: 400px;
 
-  padding: 20px 30px;
-  border-radius: 4px;
+  padding: 2rem 3rem;
+  border-radius: 0.4rem;
   border: ${(props) =>
-    props.theme.title === "light" ? "1px solid #ccc" : "none"};
+    props.theme.title === "light" ? "1px solid #eee" : "none"};
 
   background-color: ${(props) => props.theme.colors.complement};
 
   h2 {
     font-weight: 500;
     text-align: center;
-    margin: 0 0 10px;
+    margin: 0 0 1rem;
+    font-size: 2.4rem;
   }
   p {
     text-align: center;
-  }
-
-  span {
-    color: ${(props) => props.theme.colors.text};
-    font-size: 0.8rem;
-    line-height: 1rem;
-    font-weight: 600;
-    margin-top: 15px;
+    font-size: 1.6rem;
   }
 
   input {
-    height: 40px;
-    padding: 20px 10px;
-    border-radius: 3px;
-    border: 2px solid ${(props) => props.theme.colors.inputBorder};
+    height: 4rem;
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+    border: 0.2rem solid ${(props) => props.theme.colors.inputBorder};
     background-color: ${(props) => props.theme.colors.background};
     color: #f6f6f6;
-    margin-top: 8px;
+    margin-top: 1.5rem;
     transition: border 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.6rem;
     transition: all 0.2s;
 
     &:focus {
@@ -76,29 +57,19 @@ export const Form = styled.form`
   }
 
   textarea {
-    padding: 10px;
-    border-radius: 3px;
-    border: 2px solid ${(props) => props.theme.colors.inputBorder};
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 0.2rem solid ${(props) => props.theme.colors.inputBorder};
     background-color: ${(props) => props.theme.colors.background};
     color: #f6f6f6;
-    margin-top: 10px;
-    font-size: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
     resize: initial;
     transition: all 0.2s;
 
     &:focus {
       border-color: ${(props) => props.theme.colors.secundary};
     }
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    margin-top: 20px;
-    align-self: center;
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
   }
 `;
 
@@ -107,12 +78,12 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-  margin-top: 15px;
-  padding: 10px;
-  font-size: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
   color: #fff;
   background-color: ${(props) => props.theme.colors.secundary};
-  border-radius: 3px;
+  border-radius: 0.3rem;
   border: 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -124,6 +95,35 @@ export const Button = styled.button`
   }
 
   svg {
-    margin-left: 5px;
+    margin-left: 0.5rem;
+  }
+`;
+
+export const Bg = styled.div`
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+
+  div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    svg:first-child {
+      position: absolute;
+      left: -45rem;
+      top: -15rem;
+
+      @media (max-width: 500px) {
+        bottom: -15rem;
+        top: auto;
+      }
+    }
+    svg:last-child {
+      position: absolute;
+      bottom: -10rem;
+      right: -100rem;
+    }
   }
 `;
