@@ -10,11 +10,7 @@ export const Content = styled.div`
   justify-content: space-evenly;
 
   position: relative;
-
-  @media (max-width: 1020px) {
-    flex-direction: column-reverse;
-    padding: 40px;
-  }
+  padding: 0 4rem;
 
   img {
     height: 100%;
@@ -26,7 +22,7 @@ const Pulse = keyframes`
     box-shadow: 0 0 0 0 rgba(255,199,52.5);
   }
   70% {
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 1rem rgba(204,169,44, 0);
   }
   100% {
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
@@ -41,27 +37,28 @@ export const TextContent = styled.div`
   max-width: 500px;
   min-width: 300px;
   font-family: "Nunito", sans-serif;
-  font-size: 16px;
-
-  @media (max-width: 770px) {
-    width: 100%;
-  }
-  p {
-    font-size: 1.2em;
-    ${(props) => props.theme.colors.text}
-    margin-top: 10px;
-  }
-
-  h1 {
-    font-size: 3em;
-  }
+  font-size: 1.6rem;
 
   h2 {
     background-color: #ffc734;
-    border-radius: 3px;
-    padding: 0 10px;
-    /* box-shadow: 0 0 0 rgba(255, 199, 52, 0.5); */
+    border-radius: 0.3rem;
+    padding: 0 1rem;
     animation: ${Pulse} 2s infinite;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+
+    @media (max-width: 480px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.9rem;
+    ${(props) => props.theme.colors.text};
+    margin-top: 1rem;
   }
 `;
 
@@ -76,12 +73,12 @@ export const Image = styled.div`
   }
 
   @media (max-width: 1300px) {
-    width: 400px;
-    min-width: 400px;
-    min-height: 400px;
-    height: 400px;
+    width: 40rem;
+
+    height: 40rem;
     overflow: hidden;
-    border-radius: calc(400px / 2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: calc(40rem / 2);
     img {
       width: 100%;
       height: 100%;
@@ -95,14 +92,14 @@ export const Button = styled(Link)`
   align-items: center;
   justify-content: center;
 
-  height: 40px;
-  padding: 0 30px;
-  border: 1px solid #aaa;
-  border-radius: 50px;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0.1rem solid #aaa;
+  border-radius: 5rem;
   text-decoration: none;
   color: ${(props) => props.theme.colors.text};
-  font-size: 1em;
-  margin-top: 15px;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
   transition: background-color 0.2s;
 
   &:hover {
@@ -110,7 +107,7 @@ export const Button = styled(Link)`
   }
 
   svg {
-    margin-left: 10px;
+    margin-left: 1rem;
     color: ${(props) => props.theme.colors.text};
   }
 `;
@@ -125,6 +122,6 @@ export const Bg = styled.div`
   width: 100% !important;
   z-index: -1;
   transform: scale(2);
-  right: -150px;
+  right: -15rem;
   bottom: 0;
 `;

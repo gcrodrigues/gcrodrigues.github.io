@@ -2,7 +2,7 @@ import React from "react";
 
 import { Card, Content } from "./styles";
 
-const Repo = ({ name, url, description }) => {
+const Repo = ({ name, url, homepage, description }) => {
   return (
     <>
       <Card>
@@ -11,7 +11,7 @@ const Repo = ({ name, url, description }) => {
           <h2>{name}</h2>
           <p>{description}</p>
           <div>
-            <a href={url}>Visitar site</a>
+            <a href={homepage}>Visitar site</a>
             <a href={url}>Visitar repo</a>
           </div>
         </Content>

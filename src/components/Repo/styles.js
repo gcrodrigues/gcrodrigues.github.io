@@ -12,37 +12,43 @@ export const Card = styled.div`
   color: ${(props) => props.theme.colors.text};
 
   padding: 0;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 
   text-align: center;
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-
   img {
     max-width: 100%;
-    border-radius: 5px 5px 0 0;
+    border-radius: 0.5rem 0.5rem 0 0;
   }
 `;
 
 export const Content = styled.div`
-  padding: 10px 15px;
-  height: 100%;
   display: flex;
   align-items: stretch;
   flex-direction: column;
   justify-content: space-around;
+
+  height: 100%;
+
+  padding: 1rem 1.5rem;
   border-bottom: ${(props) =>
     props.theme.title === "light" ? "1px solid #ccc" : "none"};
+
   border-left: ${(props) =>
     props.theme.title === "light" ? "1px solid #ccc" : "none"};
+
   border-right: ${(props) =>
     props.theme.title === "light" ? "1px solid #ccc" : "none"};
-  border-radius: 0 0 5px 5px;
+
+  border-radius: 0 0 0.5rem 0.5rem;
+
+  h2 {
+    font-size: 2.4rem;
+  }
 
   p {
-    margin: 5px 0;
+    margin: 0.5rem 0;
+    font-size: 1.6rem;
   }
 
   div {
@@ -54,12 +60,13 @@ export const Content = styled.div`
       width: 45%;
       text-decoration: none;
       color: ${(props) => props.theme.colors.text};
-      padding: 8px 0;
-      margin-top: 10px;
-      border-radius: 5px;
+      padding: 0.8rem 0;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
       font-weight: 600;
       background-color: ${(props) => props.theme.colors.secundary};
       transition: all 0.15s ease-out;
+      font-size: 1.6rem;
 
       &:hover {
         background-color: ${darken(0.1, "#9b1fff")};
@@ -67,7 +74,7 @@ export const Content = styled.div`
 
       &:nth-child(2n) {
         background-color: ${(props) => props.theme.colors.complement};
-        border: 1px solid ${(props) => props.theme.colors.secundary};
+        border: 0.1rem solid ${(props) => props.theme.colors.secundary};
         color: ${(props) => props.theme.colors.secundary};
       }
 

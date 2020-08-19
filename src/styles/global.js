@@ -1,22 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+  :root {
+    font-size: 55%;
+  }
+
   *{
     padding: 0;
     margin: 0;
     outline: 0;
     box-sizing:border-box;
   }
-
- /*  html{
-    --primary-color: #A628A6;
-    --secundary-color: #9B1FFF;
-
-    --complement-color: #2a2e35;
-    --background-color: #12181b;
-    
-    --text-color: #f5f5f5;
-  } */
 
   body{
     background: ${(props) => props.theme.colors.background};
@@ -25,7 +19,7 @@ export default createGlobalStyle`
   }
 
   body::-webkit-scrollbar {
-    width: .45rem;
+    width: .72rem;
   }
   
   body::-webkit-scrollbar-track {
@@ -38,7 +32,7 @@ export default createGlobalStyle`
 
 
   #root{
-    min-height: 600px;
+    min-height: 650px;
   }
 
   html, body, #root {
@@ -52,5 +46,12 @@ export default createGlobalStyle`
 
   button{
     cursor:pointer;
+  }
+
+  @media (min-width: 700px) {
+    :root{
+      font-size: 62.5%;
+
+    }
   }
 `;

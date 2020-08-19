@@ -14,10 +14,10 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
-  width: calc(100% - 5rem);
+  width: calc(100% - 8rem);
   height: 100%;
   @media (max-width: 770px) {
     width: 100%;
-    height: calc(100% - 5rem);
+    height: calc(100% - 8rem);
   }
 `;

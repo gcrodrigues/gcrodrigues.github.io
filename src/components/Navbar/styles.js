@@ -7,14 +7,16 @@ export const Container = styled.nav`
   left: 0;
   top: 0;
   z-index: 1;
-  width: 5rem;
+  width: 100%;
+  height: 8rem;
+  padding: 0 1.5rem;
 
-  @media (min-width: 771px) and (max-height: 450px) {
-    width: calc(5rem + 0.45rem);
+  @media (min-width: 770px) and (max-height: 450px) {
+    width: calc(8rem + 0.72rem);
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
-      width: 0.45rem;
+      width: 0.72rem;
     }
 
     &::-webkit-scrollbar-track {
@@ -26,27 +28,22 @@ export const Container = styled.nav`
     }
   }
 
-  @media (max-width: 770px) {
-    width: 100%;
-    height: 5rem;
-    padding: 0px 10px;
-  }
-
-  @media (min-width: 771px) {
+  @media (min-width: 770px) {
+    width: 8rem;
     height: 100%;
-    padding: 20px 0px;
+    padding: 2rem 0;
   }
 
   h1 {
-    font-size: 0.6rem;
+    font-size: 1rem;
     text-align: center;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 0.2rem;
     color: #fff;
 
     span {
       color: #fff;
-      font-size: 1.6rem;
+      font-size: 2.5rem;
       font-family: "Balsamiq Sans", Arial, Helvetica, sans-serif;
       font-weight: 100;
     }
@@ -73,7 +70,7 @@ export const List = styled.ul`
   }
 
   li:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
     @media (max-width: 770px) {
       margin-bottom: 0;
@@ -82,7 +79,7 @@ export const List = styled.ul`
 
   li:last-child {
     margin-top: auto;
-    padding: 10px 0;
+    padding: 1rem 0;
     cursor: pointer;
     color: ${(props) => props.theme.colors.icons};
     filter: brightness(100%);
@@ -94,6 +91,8 @@ export const List = styled.ul`
 
     @media (max-width: 770px) {
       display: none;
+      /*       padding: 0;
+      margin-top: 0; */
     }
   }
 `;
@@ -102,7 +101,7 @@ export const Anchor = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
-  padding: 0 25px;
+  height: 8rem;
+  padding: 0 2.5rem;
   color: ${(props) => props.theme.colors.icons};
 `;
