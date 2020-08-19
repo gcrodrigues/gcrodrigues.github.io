@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  min-height: 600px;
+  min-height: 400px;
 
   display: flex;
   justify-content: center;
@@ -8,19 +8,26 @@
   flex-direction: column;
 }
 
-.container h2 {
-  margin-bottom: 10px;
+.container img {
+  width: 30rem;
+  height: 10rem;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .container a {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.6rem;
 
-  height: 40px;
-  margin-top: 15px;
-  padding: 5px 15px;
-  border-radius: 5px;
+  height: 4rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
 
   text-decoration: none;
 
@@ -30,5 +37,16 @@
 }
 
 .container a:hover {
-  transform: translateY(1.5px);
+  transform: translateY(0.15rem);
+}
+
+@media (min-width: 700px) {
+  .container img {
+    width: auto;
+    height: auto;
+  }
+
+  .container h2 {
+    font-size: 2.4rem;
+  }
 }
