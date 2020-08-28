@@ -36,7 +36,6 @@ export const Content = styled.div`
 
     ul {
       a {
-        color: ${(props) => props.theme.colors.text};
         margin-top: 0;
       }
     }

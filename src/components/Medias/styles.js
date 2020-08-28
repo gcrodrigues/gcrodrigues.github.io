@@ -16,7 +16,7 @@ export const Container = styled.div`
 
       a {
         text-decoration: none;
-        color: ${(props) => props.theme.colors.complement};
+        color: ${(props) => props.theme.colors.text};
         &:hover {
           color: ${(props) => props.theme.colors.secundary};
         }
