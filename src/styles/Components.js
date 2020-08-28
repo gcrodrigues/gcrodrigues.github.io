@@ -1,4 +1,29 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+
+    scale: 0.8,
+  },
+  in: {
+    opacity: 1,
+
+    scale: 1,
+  },
+  out: {
+    opacity: 0,
+
+    scale: 1.2,
+  },
+};
+
+const pageTransition = {
+  type: "tween",
+  ease: "anticipate",
+  duration: 0.5,
+};
 
 export const Container = styled.div`
   height: 100%;
@@ -13,7 +38,13 @@ export const Container = styled.div`
   }
 `;
 
-export const Section = styled.section`
+export const Section = styled(motion.div).attrs(() => ({
+  initial: "initial",
+  animate: "in",
+  exit: "out",
+  variants: pageVariants,
+  transition: pageTransition,
+}))`
   width: calc(100% - 8rem);
   height: 100%;
   @media (max-width: 770px) {
