@@ -1,17 +1,11 @@
 import React, { useState, useContext } from "react";
-import {
-  FaPaperPlane,
-  FaLinkedinIn,
-  FaGithub,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
 import axios from "axios";
+import { ThemeContext } from "styled-components";
 
 import { Navbar, Medias } from "../../components";
 import { Container, Section } from "../../styles/Components";
 import { Content, Form, Button, Bg } from "./styles";
-
-import { ThemeContext } from "styled-components";
 
 function Contact() {
   const [name, setName] = useState("");
