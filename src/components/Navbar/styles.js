@@ -52,14 +52,14 @@ export const Container = styled.nav`
 
 export const List = styled.ul`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
   list-style: none;
+  flex-direction: row;
+  justify-content: center;
 
-  @media (max-width: 770px) {
-    flex-direction: row;
-    justify-content: center;
+  @media (min-width: 770px) {
+    flex-direction: column;
+    height: 100%;
+    min-height: 450px;
   }
 
   li {
@@ -90,9 +90,9 @@ export const List = styled.ul`
     }
 
     @media (max-width: 770px) {
-      display: none;
-      /*       padding: 0;
-      margin-top: 0; */
+      /* display: none; */
+      padding: 0;
+      margin-top: 0;
     }
   }
 `;
