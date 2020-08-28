@@ -106,24 +106,42 @@ export const Bg = styled.div`
   position: absolute;
 
   div {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 
-    svg:first-child {
+    svg {
+      max-width: 1500px;
       position: absolute;
-      left: -45rem;
-      top: -15rem;
-
       @media (max-width: 500px) {
-        bottom: -15rem;
-        top: auto;
+        transform: scale(2);
       }
-    }
-    svg:last-child {
-      position: absolute;
-      bottom: -10rem;
-      right: -100rem;
+
+      &:first-child {
+        bottom: -85rem;
+        left: -45rem;
+      }
+
+      &:last-child {
+        top: -70rem;
+        right: -50rem;
+      }
     }
   }
 `;
+
+/* svg:first-child {
+  position: absolute;
+  left: -45rem;
+  top: -15rem;
+
+  @media (max-width: 500px) {
+    bottom: -15rem;
+    top: auto;
+  }
+}
+svg:last-child {
+  position: absolute;
+  bottom: -10rem;
+  right: -100rem;
+} */
