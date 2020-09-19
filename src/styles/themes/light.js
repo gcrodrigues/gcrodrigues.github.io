@@ -3,13 +3,13 @@ import { lighten, darken } from "polished";
 export default {
   title: "light",
   colors: {
-    primary: "#c24e98",
-    secundary: "#7e56cc",
+    primary: "#f7b733",
+    secundary: "#f25c27",
 
-    background: "#f0f0fe",
+    background: "#fafafa",
     complement: "#fff",
 
-    navbar: `${lighten(0.1, "rgba(67, 53, 198, 1)")}`,
+    navbar: `${lighten(0.1, "#fc4a1a")}`,
 
     inputBorder: darken(0.03, "#f0f0fe"),
 
