@@ -4,25 +4,22 @@ import { motion } from "framer-motion";
 const pageVariants = {
   initial: {
     opacity: 0,
-
-    scale: 0.8,
+    scale: .99
   },
   in: {
     opacity: 1,
-
-    scale: 1,
+    scale: 1
   },
   out: {
     opacity: 0,
-
-    scale: 1.2,
+    scale: .99
   },
 };
 
 const pageTransition = {
   type: "tween",
   ease: "anticipate",
-  duration: 0.5,
+  duration: 0.3,
 };
 
 export const Container = styled.div`
