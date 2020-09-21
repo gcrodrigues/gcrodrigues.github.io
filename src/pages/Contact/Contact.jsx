@@ -23,8 +23,12 @@ function Contact() {
 
     axios
       .post("https://formspree.io/meqrnjdk", formData)
-      .then((res) => console.log("Success"))
-      .catch((err) => console.log("Failure"));
+      .then((res) => alert("Success! Your email has been sent!"))
+      .catch((err) => console.log("Error sending the message. Try again."));
+
+    setName("");
+    setEmail("");
+    setMessage("");
   }
 
   return (
@@ -60,6 +64,7 @@ function Contact() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your Name"
+              required
             />
 
             <input
@@ -68,6 +73,7 @@ function Contact() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your email"
+              required
             />
 
             <textarea
@@ -77,6 +83,7 @@ function Contact() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Message"
+              required
             />
             <Button>
               SEND <FaPaperPlane size={20} />

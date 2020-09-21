@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken, lighten } from "polished";
+import { darken } from "polished";
 
 export const Content = styled.div`
   height: 100%;
@@ -25,7 +25,7 @@ export const Form = styled.form`
   border-radius: 0.4rem;
   border: ${(props) =>
     props.theme.title === "light" ? "1px solid #eee" : "none"};
-
+  box-shadow: 0 0 5rem 0.5rem rgba(0, 0, 0, 0.1);
   background-color: ${(props) => props.theme.colors.complement};
 
   h2 {
@@ -45,7 +45,7 @@ export const Form = styled.form`
     border-radius: 0.3rem;
     border: 0.2rem solid ${(props) => props.theme.colors.inputBorder};
     background-color: ${(props) => props.theme.colors.background};
-    color: #f6f6f6;
+    color: ${(props) => props.theme.colors.text};
     margin-top: 1.5rem;
     transition: border 0.3s ease;
     font-size: 1.6rem;
@@ -61,7 +61,7 @@ export const Form = styled.form`
     border-radius: 0.3rem;
     border: 0.2rem solid ${(props) => props.theme.colors.inputBorder};
     background-color: ${(props) => props.theme.colors.background};
-    color: #f6f6f6;
+    color: ${(props) => props.theme.colors.text};
     margin-top: 1.5rem;
     font-size: 1.6rem;
     resize: initial;
@@ -129,19 +129,3 @@ export const Bg = styled.div`
     }
   }
 `;
-
-/* svg:first-child {
-  position: absolute;
-  left: -45rem;
-  top: -15rem;
-
-  @media (max-width: 500px) {
-    bottom: -15rem;
-    top: auto;
-  }
-}
-svg:last-child {
-  position: absolute;
-  bottom: -10rem;
-  right: -100rem;
-} */
