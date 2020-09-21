@@ -16,5 +16,7 @@ export default {
     icons: "#f1f1f1",
 
     text: "#222",
+
+    active: "rgba(50, 50, 50, .1)"
   },
 };
