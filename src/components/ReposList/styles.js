@@ -25,7 +25,7 @@ export const Loading = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  padding: 3rem 0;
 
   animation: ${rotate} 1s infinite linear;
 
