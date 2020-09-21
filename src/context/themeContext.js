@@ -8,6 +8,7 @@ const LayoutContext = createContext();
 export const LayoutProvider = ({ children }) => {
   const [theme, setTheme] = useState(dark);
   const [width, setWidth] = useState(window.innerWidth);
+  const [navIsOpen, setNavIsOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -17,12 +18,19 @@ export const LayoutProvider = ({ children }) => {
     };
   }, [width]);
 
-  function toggleTheme() {
+  const toggleTheme = () => {
     setTheme(theme === dark ? light : dark);
-  }
+  };
+
+  const handleNavbar = () => {
+    setNavIsOpen(!navIsOpen);
+    document.body.style.overflow = navIsOpen ? "unset" : "hidden";
+  };
 
   return (
-    <LayoutContext.Provider value={{ toggleTheme, theme, width }}>
+    <LayoutContext.Provider
+      value={{ toggleTheme, handleNavbar, theme, width, navIsOpen }}
+    >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </LayoutContext.Provider>
   );
