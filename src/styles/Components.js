@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 const pageVariants = {
   initial: {
     opacity: 0,
-    scale: .99
+    scale: 0.99,
   },
   in: {
     opacity: 1,
-    scale: 1
+    scale: 1,
   },
   out: {
     opacity: 0,
-    scale: .99
+    scale: 0.99,
   },
 };
 
