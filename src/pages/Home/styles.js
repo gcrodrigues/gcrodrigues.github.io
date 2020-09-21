@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Content = styled.div`
@@ -17,18 +17,6 @@ export const Content = styled.div`
   }
 `;
 
-const Pulse = keyframes`
-  0% {
-    box-shadow: 0 0 0 0 rgba(255,199,52.5);
-  }
-  70% {
-      box-shadow: 0 0 0 1rem rgba(204,169,44, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-`;
-
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,14 +26,6 @@ export const TextContent = styled.div`
   min-width: 300px;
   font-family: "Nunito", sans-serif;
   font-size: 1.6rem;
-
-  h2 {
-    background-color: #ffc734;
-    border-radius: 0.3rem;
-    padding: 0 1rem;
-    animation: ${Pulse} 2s infinite;
-    margin-bottom: 1rem;
-  }
 
   h1 {
     font-size: 4.8rem;
@@ -116,7 +96,10 @@ export const Bg = styled.div`
   mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath d='M394.5 170.1c44.4 11.4 108.2 9.8 143.2 36.1 35 26.3 41.2 80.6 23.8 124.3-17.3 43.8-58.2 77-92.6 114.8-34.4 37.8-62.3 80.1-94.9 75.2-32.5-4.9-69.6-57.1-95.9-90.2-26.3-33.2-41.9-47.4-65.3-61.8-23.4-14.4-54.7-29-78.2-57.2-23.5-28.2-39.1-70-33-109.6 6.1-39.7 33.8-77.1 70.5-92 36.7-14.9 82.3-7.3 117.6 8.7s60.4 40.3 104.8 51.7z'/%3E%3C/svg%3E");
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
-  background: linear-gradient(90deg, #3f5efb, #fc466b) !important;
+  background: ${(props) => {
+    const color = props.theme.colors;
+    return `linear-gradient(90deg, ${color.secundary}, ${color.primary})`;
+  }}!important;
   position: absolute;
   height: 100% !important;
   width: 100% !important;

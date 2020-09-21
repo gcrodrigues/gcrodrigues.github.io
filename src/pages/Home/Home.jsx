@@ -14,7 +14,6 @@ function Home() {
       <Section>
         <Content>
           <TextContent>
-            <h2>Website under development!</h2>
             <h1>
               I'm Gustavo Carvalho <br />
               and I create creative websites.
