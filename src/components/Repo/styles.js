@@ -1,86 +1,63 @@
 import styled from "styled-components";
 import { lighten, darken } from "polished";
 
-export const Card = styled.div`
+export const Card = styled.a`
   width: 100%;
-  max-width: 720px;
+  min-height: 150px;
 
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
 
-  background: ${(props) => props.theme.colors.complement};
+  text-decoration: none;
+  
   color: ${(props) => props.theme.colors.text};
 
-  padding: 0;
-  border-radius: 0.5rem;
+  padding:  1.5rem; 
+  border-radius: 0.6rem;
+  border:.1rem solid ${props => props.theme.colors.secundary};
 
-  text-align: center;
+  transition: transform .2s, background-color .2s;
 
-  img {
-    max-width: 100%;
-    border-radius: 0.5rem 0.5rem 0 0;
+  &:hover{
+    transform: scale(1.02);
+    background-color: rgba(150,150,150,.1);
   }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  p{
+    margin: 0.5rem 0;
+    font-size:1.6rem;
+  }
+
+  div{
+    margin-top: auto;
+    margin-left: auto;
+  }
+
 `;
 
-export const Content = styled.div`
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: space-around;
+export const Tag = styled.span`
+  background-color: ${props => 
+    props.lang === "TypeScript"
+      ? "#007acd"
+      : props.lang === "JavaScript"
+        ? "#f5dd19"
+        : props.lang === "CSS"
+          ? "#573f7d"
+          : "#e44c27"
+  };
 
-  height: 100%;
+  color: ${props => props.lang === "JavaScript"? "#1d1d1d" : "#fff"};
+  padding: 2px 8px;
+  border-radius: .4rem;
 
-  padding: 1rem 1.5rem;
-  border-bottom: ${(props) =>
-    props.theme.title === "light" ? "1px solid #ccc" : "none"};
+  font-size:1.4rem;
+  font-weight: 600;
 
-  border-left: ${(props) =>
-    props.theme.title === "light" ? "1px solid #ccc" : "none"};
-
-  border-right: ${(props) =>
-    props.theme.title === "light" ? "1px solid #ccc" : "none"};
-
-  border-radius: 0 0 0.5rem 0.5rem;
-
-  h2 {
-    font-size: 2.4rem;
-  }
-
-  p {
-    margin: 0.5rem 0;
-    font-size: 1.6rem;
-  }
-
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-
-    a {
-      width: 45%;
-      text-decoration: none;
-      color: ${(props) => props.theme.colors.text};
-      padding: 0.8rem 0;
-      margin-top: 1rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      background-color: ${(props) => props.theme.colors.secundary};
-      transition: all 0.15s ease-out;
-      font-size: 1.6rem;
-
-      &:hover {
-        background-color: ${darken(0.1, "#9b1fff")};
-      }
-
-      &:nth-child(2n) {
-        background-color: ${(props) => props.theme.colors.complement};
-        border: 0.1rem solid ${(props) => props.theme.colors.secundary};
-        color: ${(props) => props.theme.colors.secundary};
-      }
-
-      &:nth-child(2n):hover {
-        background-color: ${lighten(0.02, "#2a2e35")};
-      }
-    }
+  & + span {
+    margin-left: 5px;
   }
 `;
