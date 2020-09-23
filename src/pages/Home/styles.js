@@ -74,7 +74,7 @@ export const Button = styled(Link)`
 
   height: 4rem;
   padding: 0 3rem;
-  border: 0.1rem solid #aaa;
+  border: 0.1rem solid ${props => props.theme.colors.text};
   border-radius: 5rem;
   text-decoration: none;
   color: ${(props) => props.theme.colors.text};
